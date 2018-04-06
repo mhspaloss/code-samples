@@ -1,0 +1,49 @@
+function telephoneCheck(str) {
+
+  //remove spaces
+  str = str.replace(/\s/g,'');
+
+  // if string contains characters other than 0-9, (, ), -, return false
+  var regex = RegExp('[^0-9)(-]');
+  if (regex.test(str)) {
+    return false;
+  }
+
+  //if first character is "1" (Unicode 49), it's optional country code - remove it
+  if (str.charCodeAt(0) == 49) {
+    str = str.slice(1);
+  }
+
+  //if there are not 10 numeric characters, return false
+  if (str.replace(/[()-]/g,'').length != 10) {
+    return false;
+  }
+
+  //This leaves three cases, 10 digits, digits/dashes, and digits/parens/dash
+  switch (str.length) {
+
+  //Test for 10 digits case: 5555555555
+    case 10:
+    break;
+
+  //Test for digits/dashes case; 555-555-5555
+    case 12:
+    if ((str.charCodeAt(3) != 45) || (str.charCodeAt(7) != 45)) {
+      return false;
+    }
+    break;
+
+  //test for digits/parens/dash case: (555)555-5555
+    case 13:
+    if ((str.charCodeAt(0) != 40) || (str.charCodeAt(4) != 41) || (str.charCodeAt(8) != 45)) {
+      return false;
+    }
+    break;
+
+}
+
+  return true;
+}
+
+
+telephoneCheck("555-555-5555");
