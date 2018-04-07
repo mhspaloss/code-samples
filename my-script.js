@@ -8,7 +8,10 @@ function checkCashRegister(price, cash, cid) {
   }
 
   //helper function to create array of bills and coins to make change
+  makeChange(changeDue) {
 
+  }
+  
   //Return "insufficient funds" or "Closed", otherwise calc change
   var change = reduce(totalCID);
   if (changeDue > change) {
@@ -18,7 +21,7 @@ function checkCashRegister(price, cash, cid) {
     return "Closed";
   }
   else { //sufficient cash to make change, calc change amount
-
+    var changeArr = makeChange(changeDue);
   }
 
   // Here is your change, ma'am.
