@@ -1,15 +1,17 @@
 
-function fearNotLetter(str) {
-
-//  arr = str.split('');
-  i=0;
-
-  while (i < str.length-1) {  // loop through the array while there are more elements
-    var shouldBeNext = str.charCodeAt(i) + 1;
-    if (shouldBeNext != str.charCodeAt(i+1)) {
-      return String.fromCharCode(shouldBeNext);
-    }
-    i++;
-  }
-  return undefined;
+function checkCashRegister(price, cash, cid) {
+  var change;
+  // Here is your change, ma'am.
+  return change;
 }
+
+// Example cash-in-drawer array:
+// [["PENNY", 1.01],
+// ["NICKEL", 2.05],
+// ["DIME", 3.10],
+// ["QUARTER", 4.25],
+// ["ONE", 90.00],
+// ["FIVE", 55.00],
+// ["TEN", 20.00],
+// ["TWENTY", 60.00],
+// ["ONE HUNDRED", 100.00]]
