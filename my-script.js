@@ -1,6 +1,26 @@
 
 function checkCashRegister(price, cash, cid) {
-  var change;
+  var changeDue = cash - price;
+
+  //helper functions to total the cid (cash in drawer) amount
+  totalCID = function (accumulator, currentValue) {
+
+  }
+
+  //helper function to create array of bills and coins to make change
+
+  //Return "insufficient funds" or "Closed", otherwise calc change
+  var change = reduce(totalCID);
+  if (changeDue > change) {
+    return "Insufficient funds";
+  }
+  else if (changeDue == change) {
+    return "Closed";
+  }
+  else { //sufficient cash to make change, calc change amount
+
+  }
+
   // Here is your change, ma'am.
   return change;
 }
