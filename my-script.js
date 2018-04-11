@@ -3,8 +3,9 @@ function checkCashRegister(price, cash, cid) {
   var changeDue = cash - price;
 
   //helper functions to total the cid (cash in drawer) amount
-  totalCID = function (accumulator, currentValue) {
-
+  totalCID = function (acc, curVal, curIndx) {
+      const moneyValue = [.01, .05, .10, .25, 1, 5, 10, 20, 100];
+      return acc + (curVal[1]*moneyValue[curIndx];
   }
 
   //helper function to create array of bills and coins to make change
