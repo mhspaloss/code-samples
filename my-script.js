@@ -8,12 +8,12 @@ function checkCashRegister(price, cash, cid) {
   }
 
   //helper function to create array of bills and coins to make change
-  makeChange(changeDue) {
+  function makeChange(changeDue) {
 
   }
-  
+
   //Return "insufficient funds" or "Closed", otherwise calc change
-  var change = reduce(totalCID);
+  var change = cid.reduce(totalCID);
   if (changeDue > change) {
     return "Insufficient funds";
   }
